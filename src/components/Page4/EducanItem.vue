@@ -6,7 +6,7 @@
         <li class="educan-item-tag kotlin">Kotlin</li>
         <li class="educan-item-tag jetpack">Jetpack</li>
     </ul>
-    <p class="educan-item-discription">
+    <p class="educan-item-description">
         요약 최대 2줄 이 치킨은 대단한 것은 아니지만 엄청난겁니다. 바로 뿌링뿌링소스가 들어가있다는 점이죠.
     </p>
 </div>
@@ -72,7 +72,7 @@ export default {
     background: #3E3E3E;
 }
 
-.educan-item-discription {
+.educan-item-description {
     color : var(--gray7)
 }
 </style>
