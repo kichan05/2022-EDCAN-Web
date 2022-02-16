@@ -1,20 +1,26 @@
 <template>
 <div class="educan-item">
-    <div class="educan-item-title">Android 애플리케이션 개발</div>
+    <div class="educan-item-title">{{ educanStudyData.title }}</div>
     <ul class="educan-item-tag-wrap">
-        <li class="educan-item-tag android">Android</li>
-        <li class="educan-item-tag kotlin">Kotlin</li>
-        <li class="educan-item-tag jetpack">Jetpack</li>
+        <li class="educan-item-tag" :class="educanStudyData.unit"># {{ educanStudyData.unit }}</li>
+
+        <li
+            v-for="i, n in educanStudyData.tags" :key="n"
+            :style="{backgroundColor : i.bgColor}"
+            class="educan-item-tag"># {{ i.tagName }}</li>
     </ul>
     <p class="educan-item-description">
-        요약 최대 2줄 이 치킨은 대단한 것은 아니지만 엄청난겁니다. 바로 뿌링뿌링소스가 들어가있다는 점이죠.
+        {{ educanStudyData.description }}
     </p>
 </div>
 </template>
 
 <script>
 export default {
-    name : "Educan item"
+    name : "Educan item",
+    props : {
+        educanStudyData : Object
+    }
 }
 </script>
 
@@ -45,34 +51,54 @@ export default {
     border : 0px;
     border-radius: 34px;
 
-    background: red;
     color : white;
 
     font-size: 12px;
     padding : 6px 12px;
 }
 
-.educan-item-tag.android {
+.educan-item-tag.Atelier {
+    background: #77aeff;
+}
+
+.educan-item-tag.Pixel {
+    background: #ff7272;
+}
+
+/* .educan-item-tag.Android {
     background: #0B7038;
 }
 
-.educan-item-tag.kotlin {
+.educan-item-tag.Kotlin {
     background: #6F3C0B;
 }
 
-.educan-item-tag.jetpack {
+.educan-item-tag.기초 {
+    background: #95df80;
+}
+
+.educan-item-tag.UIUX {
+    background: #fe654a;
+}
+
+.educan-item-tag.Jetpack {
     background: #073042;
 }
 
-.educan-item-tag.flutter {
+.educan-item-tag.Flutter {
     background: #023A78;
 }
 
-.educan-item-tag.ios {
+.educan-item-tag.iOS {
     background: #3E3E3E;
-}
+} */
 
 .educan-item-description {
-    color : var(--gray7)
+    color : var(--gray7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 </style>
