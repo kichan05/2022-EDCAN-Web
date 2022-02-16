@@ -21,11 +21,12 @@ export default {
 <style>
 .main-page-page {
     width : 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    min-height: 70vh;
 }
 
 .main-page-page .page-title {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 500;
 }
 </style>

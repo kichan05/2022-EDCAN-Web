@@ -88,11 +88,11 @@ export default {
 }
 
 .description-wrap {
-    text-align: center;
-
     display: flex;
     flex-direction: column;
     gap : 24px;
+
+    text-align: center;
 }
 
 .description {
