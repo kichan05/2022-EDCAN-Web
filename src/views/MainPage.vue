@@ -1,5 +1,5 @@
 <template>
-<main>
+<main class="page">
     <Page4/>
     <Page5/>
 </main>

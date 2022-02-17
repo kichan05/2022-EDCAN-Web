@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .educan-item {
     border-radius: 12px;
     background: #E1E1E1;

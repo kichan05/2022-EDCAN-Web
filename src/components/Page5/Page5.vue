@@ -4,10 +4,10 @@
         <h3 class="page-title">Portfolio</h3>
         
         <div class="portfolio-wrap">
-            <PortfolioItem/>
-            <PortfolioItem/>
-            <PortfolioItem/>
-            <PortfolioItem/>
+            <PortfolioItem
+                v-for="i, n in portfolioList" :key="n"
+                :PortfolioData="i"
+                />
         </div>
 
         <button class="goto-portfolio-all">전체보기</button>
@@ -18,15 +18,20 @@
 <script>
 import PortfolioItem from "./PortfolioItem.vue"
 
+import portfolioList from "./../../assets/PortfolioList.js"
+
 export default {
     name : "Page5",
+    data(){return{
+        portfolioList
+    }},
     components : {
         PortfolioItem
     }
 }
 </script>
 
-<style scope>
+<style scoped>
 .page5 {
     display: grid;
     grid-template-columns: 1fr;
@@ -63,7 +68,5 @@ export default {
     border-radius: 100px;
 
     background-color: white;
-
-    cursor: pointer;
 }
 </style>
