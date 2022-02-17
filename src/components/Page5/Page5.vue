@@ -5,12 +5,14 @@
         
         <div class="portfolio-wrap">
             <PortfolioItem
-                v-for="i, n in portfolioList" :key="n"
-                :PortfolioData="i"
+                v-for="i in 2" :key="i"
+                :PortfolioData="portfolioList[i]"
                 />
         </div>
 
-        <button class="goto-portfolio-all">전체보기</button>
+        <button
+            @click="$router.push('PR')"
+            class="goto-portfolio-all">전체보기</button>
     </div>
 </div>
 </template>
@@ -19,6 +21,13 @@
 import PortfolioItem from "./PortfolioItem.vue"
 
 import portfolioList from "./../../assets/PortfolioList.js"
+
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+    
+}
+
+shuffle(portfolioList)
 
 export default {
     name : "Page5",
@@ -48,13 +57,17 @@ export default {
 }
 
 .portfolio-wrap {
-    height : 270px;
-
     margin : 82px 0;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap : 20px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+
+    display: flex;
+    gap : 16px;
+}
+
+.portfolio-wrap .portfolio-item {
+    width : 100%;
 }
 
 .goto-portfolio-all {
@@ -68,5 +81,15 @@ export default {
     border-radius: 100px;
 
     background-color: white;
+    
+    transition: transform 100ms;
+}
+
+.goto-portfolio-all:hover {
+    transform: scale(1.025);
+}
+
+.goto-portfolio-all:active {
+    transform: scale(0.9);
 }
 </style>
