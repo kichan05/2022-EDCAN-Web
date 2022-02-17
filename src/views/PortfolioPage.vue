@@ -28,7 +28,6 @@
 <script>
 import PortfolioItem from "./../components/Page5/PortfolioItem.vue"
 import portfolioList from "../assets/PortfolioList.js"
-// let portfolioListFilter = portfolioList
 
 export default {
     name : "Portfolio page",
@@ -51,14 +50,16 @@ export default {
                     this.portfolioListFilter.push(i)
             })
         }
+    },
+    mounted(){
+        window.scrollTo(0, 0)
     }
 }
 </script>
 
-<style scope>
+<style scoped>
 .content {
     width : 100%;
-    min-height : 100vh;
 
     padding : 100px;
 

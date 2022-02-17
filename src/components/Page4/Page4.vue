@@ -3,7 +3,9 @@
     <div class="content">
         <div class="description-wrap">
             <h3 class="page-title">Education</h3>
-            <p class="description">이러한 과정들을 수행하기 위한 교육도 준비되어 있습니다.<br>모든 교육과정은 학과에 관계없이 EDCAN EDU에서 이수할 수 있습니다.</p>
+            <p class="description">
+                이러한 과정들을 수행하기 위한 교육도 준비되어 있습니다.<br>모든 교육과정은 학과에 관계없이 <span @click="gotoEducan" class="educan">EDCAN EDU</span>에서 이수할 수 있습니다.
+            </p>
         </div>
 
         <div class="educan-item-wrap">
@@ -60,11 +62,17 @@ const educanData = [
     ),
 ]
 
+
 export default {
     name : "Page4",
     data(){ return{
         educanData
     }},
+    methods : {
+        gotoEducan(){
+            window.location.href = "https://edu.edcan.kr"
+        }
+    },
     components : {
         EducanItem
     }
@@ -78,8 +86,6 @@ export default {
 }
 
 .content {
-    padding : 20px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +108,14 @@ export default {
 .educan-item-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap : 12px;
+    gap : 20px;
+}
+
+.description .educan {
+    font-weight: bold;
+    text-decoration: underline 3px;
+
+    cursor: pointer;
 }
 
 @media (max-width : 900px) {

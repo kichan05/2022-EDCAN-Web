@@ -8,6 +8,7 @@
             v-for="i, n in educanStudyData.tags" :key="n"
             :style="{backgroundColor : i.bgColor}"
             class="educan-item-tag"># {{ i.tagName }}</li>
+
     </ul>
     <p class="educan-item-description">
         {{ educanStudyData.description }}
@@ -27,7 +28,9 @@ export default {
 <style scoped>
 .educan-item {
     border-radius: 12px;
-    background: #E1E1E1;
+    background: #fafafa;
+
+    box-shadow: 5px 5px 6px #f0f0f0, -2px -2px 3px #f0f0f0;
 
     padding: 18px 22px;
 
@@ -35,6 +38,18 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     gap : 8px;
+
+    transition: 250ms;
+
+    cursor: pointer;
+}
+
+.educan-item:hover {
+    box-shadow: 7px 7px 6px #f0f0f0, -1px -1px 3px #f0f0f0;
+}
+
+.educan-item:active {
+    transform: scale(0.99);
 }
 
 .educan-item-title {
