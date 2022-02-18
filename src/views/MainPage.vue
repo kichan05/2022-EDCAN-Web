@@ -2,6 +2,8 @@
 <main class="page">
     <Page4/>
     <Page5/>
+
+    <Footer/>
 </main>
 </template>
 
@@ -9,11 +11,15 @@
 import Page4 from "../components/Page4/Page4.vue";
 import Page5 from "../components/Page5/Page5.vue";
 
+import Footer from "../components/Footer.vue";
+
 export default {
     name : "MainPage",
     components : {
         Page4,
         Page5,
+
+        Footer
     }
 }
 </script>
