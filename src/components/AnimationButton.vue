@@ -2,10 +2,15 @@
 <div class="animation-button" @click="$emit('btnClick')">
         <button
             class="unSeleted"
-            :class="{'isSelete' : buttonData.isSelete}">
+            :class="{'isSelete' : buttonData.isSelete}"
+            :style="{'borderColor' : buttonData.color}">
                 {{ buttonData.title }}
             <transition name="buttonSeleteEffect">
-                <div v-if="buttonData.isSelete" class="seleted">{{ buttonData.title }}</div>
+                <div
+                    v-if="buttonData.isSelete"
+                    class="seleted"
+                    :style="{'backgroundColor' : buttonData.color}"
+                        >{{ buttonData.title }}</div>
             </transition>
         </button>
 </div>
@@ -41,7 +46,7 @@ export default {
 
     background-color: white;
 
-    border: 2px solid black;
+    border: 2px solid;
     border-radius: 30px;
 
     position: relative;
