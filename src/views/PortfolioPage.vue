@@ -41,19 +41,19 @@ export default {
 
         allButtonData : new ButtonData(
             "All",
-            "#000000",
+            "#000",
             true
         ),
 
         atelierButtonData : new ButtonData(
             "Atelier",
-            "#000000",
+            "#000",
             false
         ),
 
         pixelButtonData : new ButtonData(
             "Pixel",
-            "#000000",
+            "#000",
             false
         ),
     }},
