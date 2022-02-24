@@ -1,6 +1,8 @@
 <template>
-<div class="portfolio-item">
-    <div class="portfolio-img" :style="{backgroundImage : `url(${PortfolioData.img})`}"></div>
+<div class="portfolio-item"
+    v-if="isShow">
+    <div
+        class="portfolio-img" :style="{backgroundImage : `url(${PortfolioData.img})`}"></div>
     <div class="portfolio-comment-wrap">
         <div class="portfolio-comment-data">
             <div class="title">{{ PortfolioData.title }}</div>
@@ -14,6 +16,7 @@
 export default {
     name : "PortfolioItem",
     props : {
+        isShow : Boolean,
         PortfolioData : Object,
     }
 }
