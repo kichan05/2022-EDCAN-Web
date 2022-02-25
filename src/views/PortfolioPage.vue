@@ -13,6 +13,7 @@
                 @btnClick="choiceUnit = 2"
                 :buttonData="pixelButtonData"/>
         </div>
+        <UnitDescription :choiceUnit="choiceUnit"/>
         <div class="portfolio-list">
             <PortfolioItem
                 v-for="i, n in PortfolioDataList"
@@ -26,6 +27,7 @@
 
 <script>
 import PortfolioItem from "../components/PorstfolioPage/PortfolioItem.vue"
+import UnitDescription from "../components/PorstfolioPage/UnitDescription.vue"
 import Footer from "./../components/Footer.vue"
 import AnimationButton from "./../components/AnimationButton.vue"
 
@@ -70,6 +72,8 @@ export default {
         PortfolioItem,
         Footer,
 
+        UnitDescription,
+
         AnimationButton,
     },
     watch : {
@@ -85,6 +89,8 @@ export default {
 <style scoped>
 .content {
     padding : 120px 12px;
+
+    /* overflow: hidden; */
 }
 
 h3 {
@@ -113,5 +119,4 @@ h3 {
         grid-template-columns: 1fr;
     }
 }
-
 </style>
