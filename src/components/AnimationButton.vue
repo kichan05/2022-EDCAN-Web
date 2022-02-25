@@ -2,16 +2,18 @@
 <div class="animation-button" @click="$emit('btnClick')">
         <button
             class="unSeleted"
-            :class="{'isSelete' : buttonData.isSelete}"
-            :style="{'borderColor' : buttonData.color}">
+            :class="{'isSelete' : buttonData.isSelete,
+            'All' : buttonData.title == 'All',
+            'Atelier' : buttonData.title == 'Atelier',
+            'Pixel' : buttonData.title == 'Pixel'}">
                 {{ buttonData.title }}
-            <transition name="buttonSeleteEffect">
-                <div
-                    v-if="buttonData.isSelete"
-                    class="seleted"
-                    :style="{'backgroundColor' : buttonData.color}"
-                        >{{ buttonData.title }}</div>
-            </transition>
+                <transition name="buttonSeleteEffect">
+                    <div
+                        v-if="buttonData.isSelete"
+                        class="seleted"
+                        :style="{'backgroundColor' : buttonData.color}"
+                            >{{ buttonData.title }}</div>
+                </transition>
         </button>
 </div>
 </template>
@@ -42,7 +44,6 @@ export default {
 
     font-family: "Work Sans";
     font-size: 25px;
-    font-weight: 400;
 
     background-color: white;
 
@@ -50,21 +51,41 @@ export default {
     border-radius: 30px;
 
     position: relative;
+
+    transition: background-color 200ms;
 }
 
 .animation-button button.isSelete {
+    transition-timing-function: steps(1, end);
+}
 
+/* .animation-button button.Atelier {
+    color : var(--Atelier1);
+    border : 2px solid var(--Atelier1);
+}
+.animation-button button.Pixel {
+    color : var(--Pixel1);
+    border : 2px solid var(--Pixel1);
+} */
+.animation-button button.isSelete.All {
+    background-color: #000;
+}
+.animation-button button.isSelete.Atelier {
+    background-color: var(--Atelier1);
+    border : 2px solid var(--Atelier1);
+}
+.animation-button button.isSelete.Pixel {
+    background-color: var(--Pixel1);
+    border : 2px solid var(--Pixel1);
 }
 
 .seleted {
-    width : 300px;
-    height : 300px;
+    width : 120px;
+    height : 44px;
 
     color : white;
 
-    background-color: black;
-
-    border-radius: 50%;
+    border-radius: 30px;
 
     display: flex;
     justify-content: center;
@@ -73,8 +94,13 @@ export default {
     position: absolute;
     top : 50%;
     left : 50%;
+    z-index: 2;
 
     transform: translate(-50%, -50%);
+}
+
+.button-bg {
+    
 }
 
 /* 
@@ -86,7 +112,7 @@ export default {
     transform: translate(-50%, -50%) scale(0);
 }
 .buttonSeleteEffect-enter-active {
-    transition: 700ms;
+    transition: 250ms;
 }
 .buttonSeleteEffect-enter-to {
     transform: translate(-50%, -50%) scale(1);
@@ -96,10 +122,25 @@ export default {
     opacity: 1;
 }
 .buttonSeleteEffect-leave-active {
-    transition: 200ms;
+    transition: 500ms;
 }
 .buttonSeleteEffect-leave-to {
     opacity: 0;
+}
+
+@media (max-width : 900px) {
+    .animation-button button {
+        width : 90px;
+        height : 35px;
+
+        font-size: 18px;
+    }
+    .seleted {
+        width : 90px;
+        height : 35px;
+
+        font-size: 18px;
+    }
 }
 
 </style>

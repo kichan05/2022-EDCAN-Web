@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import PortfolioItem from "./../components/Page5/PortfolioItem.vue"
+import PortfolioItem from "../components/PorstfolioPage/PortfolioItem.vue"
 import Footer from "./../components/Footer.vue"
 import AnimationButton from "./../components/AnimationButton.vue"
 
@@ -47,13 +47,13 @@ export default {
 
         atelierButtonData : new ButtonData(
             "Atelier",
-            "#000",
+            "var(--Atelier1)",
             false
         ),
 
         pixelButtonData : new ButtonData(
             "Pixel",
-            "#000",
+            "var(--Pixel1)",
             false
         ),
     }},
@@ -106,6 +106,12 @@ h3 {
     display : grid;
     grid-template-columns: repeat(2, 1fr);
     gap : 20px;
+}
+
+@media (max-width : 900px) {
+    .portfolio-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 </style>

@@ -4,7 +4,8 @@
         <div class="description-wrap">
             <h3 class="page-title">Education</h3>
             <p class="description">
-                이러한 과정들을 수행하기 위한 교육도 준비되어 있습니다.<br>모든 교육과정은 학과에 관계없이 <span @click="gotoEducan" class="educan">EDCAN EDU</span>에서 이수할 수 있습니다.
+                이러한 과정들을 수행하기 위한 교육도 준비되어 있습니다.<br>
+                모든 교육과정은 학과에 관계없이 <span @click="gotoEducan" class="educan">EDUCAN</span>에서 이수할 수 있습니다.
             </p>
         </div>
 
@@ -13,6 +14,8 @@
                 v-for="i, n in educanData" :key="n"
                 :educanStudyData="i"/>
         </div>
+
+        <button @click="gotoEducan" class="goto-educan"><span class="bold">EDUCAN</span> 바로가기</button>
     </div>
 </div>
 </template>
@@ -70,12 +73,15 @@ export default {
     }},
     methods : {
         gotoEducan(){
-            window.location.href = "https://edu.edcan.kr"
+            setTimeout(()=>{
+                    // location.href = "https://edu.edcan.kr"
+                    window.open("https://edu.edcan.kr")
+                }, 150)
         }
     },
     components : {
         EducanItem
-    }
+    },
 }
 </script>
 
@@ -116,6 +122,33 @@ export default {
     text-decoration: underline 3px;
 
     cursor: pointer;
+}
+
+.goto-educan {
+    font-size: 25px;
+
+    padding: 12px 16px;
+
+    color : white;
+
+    background: var(--EDCAN1);
+    border: 2px solid var(--EDCAN1);
+    border-radius: 30px;
+
+    transition: transform 50ms;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.goto-educan:hover {
+    transform: scale(1.05);
+}
+
+.goto-educan:active {
+    opacity: 0.5;
+    transform: scale(0.95);
 }
 
 @media (max-width : 900px) {

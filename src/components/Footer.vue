@@ -31,8 +31,6 @@ footer .content {
 }
 
 .logo {
-    /* background-color: #f00; */
-
     width : 30%;
     min-width: 500px;
 
@@ -53,7 +51,7 @@ footer .content {
 }
 
 .description {
-    /* background-color: #0f0; */
+    text-align: center;
 }
 
 @media (max-width : 1000px) {
