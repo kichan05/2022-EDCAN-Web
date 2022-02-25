@@ -7,11 +7,11 @@
         </div>
     </div>
 
-    <img class="logo" src="/img/EDCAN.svg" alt="ATELIER 로고"
+    <img class="logo logo-ani-Z" src="/img/EDCAN.svg" alt="ATELIER 로고"
         v-if="unitData.type == 'edcan'">
-    <img class="logo" src="/img/Atelier_typo_verticality.svg" alt="ATELIER 로고"
+    <img class="logo logo-ani-Y" src="/img/Atelier_typo_verticality.svg" alt="ATELIER 로고"
         v-else-if="unitData.type == 'at'">
-    <img class="logo" src="/img/Pixel_typo_verticality.svg" alt="ATELIER 로고"
+    <img class="logo logo-ani-Y" src="/img/Pixel_typo_verticality.svg" alt="ATELIER 로고"
         v-else-if="unitData.type == 'px'">
 
     <div class="descriptions-wrap" v-if="unitData.type != 'px'">
@@ -55,10 +55,6 @@ export default {
     gap : 32px;
 }
 
-.unit-card .logo {
-    grid-column: span 2;
-}
-
 .unit-card .descriptions-wrap {
     font-size: 24px;
 
@@ -88,5 +84,47 @@ export default {
 .unit-card.px {
     color : #4d4d4d;
     background-color: #ffe7c8;
+}
+
+.logo-ani-Y {
+    animation: unit-logo-animation-Y 1s;
+    animation-delay: 600ms;
+
+    transition: transform 1000ms;
+}
+
+.logo-ani-Y:hover {
+    transform: rotateY(1turn) scale(1.1);
+}
+
+.logo-ani-Z {
+    animation: unit-logo-animation-Z 1s;
+    animation-delay: 600ms;
+
+    transition: transform 1000ms;
+}
+
+.logo-ani-Z:hover {
+    transform: rotateZ(1turn) scale(1.1);
+}
+
+@keyframes unit-logo-animation-Y {
+    0% {
+        transform : rotateY(0turn);
+    }
+
+    100% {
+        transform : rotateY(1turn);
+    }
+}
+
+@keyframes unit-logo-animation-Z {
+    0% {
+        transform : rotateZ(0turn);
+    }
+
+    100% {
+        transform : rotateZ(1turn);
+    }
 }
 </style>
