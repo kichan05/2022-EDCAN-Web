@@ -93,8 +93,12 @@ export default {
 
 <style scoped>
 .content {
-    padding : 120px 12px;
     margin-top : 80px;
+    display: flex;
+    flex-direction: column;
+    
+
+    gap : 60px;
 }
 
 h3 {
@@ -105,8 +109,6 @@ h3 {
 }
 
 .unit-choice-buttons {
-    padding : 50px 0;
-    
     display: flex;
     justify-content: center;
     gap : 24px;

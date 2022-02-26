@@ -47,8 +47,6 @@ export default {
 
     padding : 32px;
 
-    margin-bottom: 50px;
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
@@ -184,6 +182,25 @@ h2::before {
 @media (max-width : 950px) {
     .unit-card .logo {
         width : 100%;
+    }
+}
+
+@media (max-width : 900px) {
+    .unit-card {
+        height : min-content;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .unit-card.at {
+        flex-direction: column-reverse;
+    }
+
+    .unit-card .logo {
+        width: 70%;
+        height : unset;
+        aspect-ratio: 1 / 1;
     }
 }
 

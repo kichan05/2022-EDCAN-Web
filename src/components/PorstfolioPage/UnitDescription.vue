@@ -60,9 +60,6 @@ export default {
 <style scoped>
 .unit-descriptions-wrap {
     width : 100%;
-    height: 500px;
-
-    margin-bottom : 50px;
 
     position: relative;
 }
