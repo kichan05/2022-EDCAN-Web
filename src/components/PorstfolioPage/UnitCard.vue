@@ -1,20 +1,20 @@
 <template>
 <div class="unit-card" :class="[unitData.type]">
-    <div class="descriptions-wrap" v-if="unitData.type == 'at'">
+    <div class="descriptions-wrap card" v-if="unitData.type == 'at'">
         <h2>{{ unitData.title }}</h2>
         <div>
             <p v-for="i, n in unitData.description" :key="n">{{ i }}</p>
         </div>
     </div>
 
-    <img class="logo logo-ani-Y" src="/img/edcan_typo_verticality.svg" alt="ATELIER 로고"
+    <img class="logo card logo-ani-Y" src="/img/edcan_typo_verticality.svg" alt="ATELIER 로고"
         v-if="unitData.type == 'edcan'">
-    <img class="logo logo-ani-Y-" src="/img/Atelier_typo_verticality.svg" alt="ATELIER 로고"
+    <img class="logo card logo-ani-Y-reverse" src="/img/Atelier_typo_verticality.svg" alt="ATELIER 로고"
         v-else-if="unitData.type == 'at'">
-    <img class="logo logo-ani-Y" src="/img/Pixel_typo_verticality.svg" alt="ATELIER 로고"
+    <img class="logo card logo-ani-Y" src="/img/Pixel_typo_verticality.svg" alt="ATELIER 로고"
         v-else-if="unitData.type == 'px'">
 
-    <div class="descriptions-wrap" v-if="unitData.type != 'at'">
+    <div class="descriptions-wrap card" v-if="unitData.type != 'at'">
         <h2>{{ unitData.title }}</h2>
         <div>
             <p v-for="i, n in unitData.description" :key="n">{{ i }}</p>
@@ -56,35 +56,20 @@ export default {
 }
 
 .unit-card.edcan {
-    /* color : #272727;
-    background-color: #96f1ff; */
-
-    color : white;
     background-color: #00b8d4;
 }
 
 .unit-card.at {
-    color : white;
     background-color: #60a5fa;
 }
 
 .unit-card.px {
-    /* color : #4d4d4d; */
-    /* background-color: #ffe7c8; */
-
-    color : #383838;
     background-color: #f87171;
 }
 
 .unit-card .logo {
     width : 75%;
     height : 75%;
-
-    background-color: #FFF;
-
-    border-radius: 1rem;
-
-    box-shadow: 0px 20px 20px #4141412a;
 
     margin : 0 auto;
     padding : 30px;
@@ -102,12 +87,16 @@ export default {
     padding : 32px;
 
     grid-column: span 3;
+}
 
+.unit-card .card {
+    color : #4d4d4d;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 20px 20px #4141412a;
 }
 
 h2 {
-    /* width : 55%; */
-
     padding : 0 3px;
 
     overflow: hidden;
@@ -125,7 +114,7 @@ h2::before {
 
     width : 120%;
 
-    border-bottom : 4px solid;
+    border-bottom : 4px solid #4d4d4d;
     border-radius: 20px;
 
     position: absolute;
@@ -140,16 +129,6 @@ h2::before {
     animation-fill-mode: forwards;
 }
 
-.unit-card.edcan h2::before {
-    border-color : #ffffff;
-}
-.unit-card.at h2::before {
-    border-color : white;
-}
-.unit-card.px h2::before {
-    border-color : #383838;
-}
-
 
 .logo-ani-Y {
     animation: unit-logo-animation-Y 1s;
@@ -162,26 +141,15 @@ h2::before {
     transform: rotateY(1turn) scale(1.1);
 }
 
-.logo-ani-Y- {
-    animation: unit-logo-animation-Y- 1s;
+.logo-ani-Y-reverse {
+    animation: unit-logo-animation-Y-reverse 1s;
     animation-delay: 600ms;
 
     transition: transform 1000ms;
 }
 
-.logo-ani-Y-:hover {
+.logo-ani-Y-reverse:hover {
     transform: rotateY(-1turn) scale(1.1);
-}
-
-.logo-ani-Z {
-    animation: unit-logo-animation-Z 1s;
-    animation-delay: 600ms;
-
-    transition: transform 850ms;
-}
-
-.logo-ani-Z:hover {
-    transform: rotateZ(1turn) scale(1.1);
 }
 
 @keyframes unit-card-title-underline {
@@ -203,23 +171,13 @@ h2::before {
     }
 }
 
-@keyframes unit-logo-animation-Y- {
+@keyframes unit-logo-animation-Y-reverse {
     0% {
         transform : rotateY(0turn);
     }
 
     100% {
         transform : rotateY(-1turn);
-    }
-}
-
-@keyframes unit-logo-animation-Z {
-    0% {
-        transform : rotateZ(0turn);
-    }
-
-    100% {
-        transform : rotateZ(1turn);
     }
 }
 
