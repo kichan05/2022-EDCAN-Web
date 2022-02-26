@@ -39,27 +39,6 @@ export default {
     position: relative;
 }
 
-h2 {
-    overflow: hidden;
-
-    display: inline-block;
-
-    position: relative;
-}
-
-h2::before {
-    content: "";
-
-    width : 107%;
-
-    border-bottom : 3px solid white;
-    border-radius: 20px;
-
-    position: absolute;
-    bottom : 0px;
-    left : 0px;
-}
-
 .unit-card {
     width : 100%;
     height: 500px;
@@ -92,6 +71,15 @@ h2::before {
     grid-column: span 2;
 }
 
+
+h2 {
+    overflow: hidden;
+
+    display: inline-block;
+
+    position: relative;
+}
+
 .unit-card.edcan {
     color : #272727;
     background-color: #96f1ff;
@@ -106,6 +94,37 @@ h2::before {
     color : #4d4d4d;
     background-color: #ffe7c8;
 }
+
+h2::before {
+    content: "";
+
+    width : 107%;
+
+    border-bottom : 4px solid;
+    border-radius: 20px;
+
+    position: absolute;
+    bottom : 1px;
+    left : 0px;
+
+    transform: translateX(-100%);
+
+    animation-name: unit-card-title-underline;
+    animation-duration: 700ms;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+}
+
+.unit-card.edcan h2::before {
+    border-color : #272727;
+}
+.unit-card.at h2::before {
+    border-color : white;
+}
+.unit-card.px h2::before {
+    border-color : #4d4d4d;
+}
+
 
 .logo-ani-Y {
     animation: unit-logo-animation-Y 1s;
