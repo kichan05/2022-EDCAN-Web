@@ -1,5 +1,6 @@
 <template>
 <div class="page">
+    <Header/>
     <div class="content">
         <h3>Portfolio</h3>
         <div class="unit-choice-buttons">
@@ -28,12 +29,14 @@
 <script>
 import PortfolioItem from "../components/PorstfolioPage/PortfolioItem.vue"
 import UnitDescription from "../components/PorstfolioPage/UnitDescription.vue"
-import Footer from "./../components/Footer.vue"
 import AnimationButton from "./../components/AnimationButton.vue"
 
 import PortfolioDataList from "./../assets/PortfolioList.js"
 
 import ButtonData from "./../Model/ButtonData.js"
+
+import Header from "../components/Header.vue";
+import Footer from "./../components/Footer.vue"
 
 export default {
     name : "PortfolioPage",
@@ -70,6 +73,8 @@ export default {
     },
     components : {
         PortfolioItem,
+
+        Header,
         Footer,
 
         UnitDescription,
@@ -89,8 +94,7 @@ export default {
 <style scoped>
 .content {
     padding : 120px 12px;
-
-    /* overflow: hidden; */
+    margin-top : 80px;
 }
 
 h3 {
