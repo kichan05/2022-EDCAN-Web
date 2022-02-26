@@ -39,6 +39,27 @@ export default {
     position: relative;
 }
 
+h2 {
+    overflow: hidden;
+
+    display: inline-block;
+
+    position: relative;
+}
+
+h2::before {
+    content: "";
+
+    width : 107%;
+
+    border-bottom : 3px solid white;
+    border-radius: 20px;
+
+    position: absolute;
+    bottom : 0px;
+    left : 0px;
+}
+
 .unit-card {
     width : 100%;
     height: 500px;
@@ -67,7 +88,7 @@ export default {
     width : 70%;
 
     margin : 0 auto;
-    
+
     grid-column: span 2;
 }
 
@@ -101,11 +122,20 @@ export default {
     animation: unit-logo-animation-Z 1s;
     animation-delay: 600ms;
 
-    transition: transform 1000ms;
+    transition: transform 850ms;
 }
 
 .logo-ani-Z:hover {
     transform: rotateZ(1turn) scale(1.1);
+}
+
+@keyframes unit-card-title-underline {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-3%);
+    }
 }
 
 @keyframes unit-logo-animation-Y {
