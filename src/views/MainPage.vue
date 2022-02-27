@@ -1,7 +1,7 @@
 <template>
 <main class="page">
-    <!-- <Header/> -->
     <Page1/>
+    <Page2/>
     <Page4/>
     <Page5/>
 
@@ -11,20 +11,20 @@
 
 <script>
 import Page1 from "../components/Page1/Page1.vue";
+import Page2 from "../components/Page2/Page2.vue";
 import Page4 from "../components/Page4/Page4.vue";
 import Page5 from "../components/Page5/Page5.vue";
 
-// import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
     name : "MainPage",
     components : {
         Page1,
+        Page2,
         Page4,
         Page5,
 
-        // Header,
         Footer,
     }
 }
