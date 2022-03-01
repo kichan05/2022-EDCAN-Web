@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router"
 
 import MainPage from "./../views/MainPage.vue"
 import PortfolioPage from "./../views/PortfolioPage.vue"
+import Admim from "./../views/Admin.vue"
 
 const routes = [
     {
@@ -11,6 +12,10 @@ const routes = [
     {
         path : "/PR",
         component : PortfolioPage
+    },
+    {
+        path : "/console",
+        component : Admim
     },
 ]
 
