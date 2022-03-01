@@ -5,7 +5,7 @@
     <div class="portfolio-list-wrap">
         <div class="portfolio-list">
             <PortfolioItem
-                v-for="i, n in PortfolioDataList" :key="n"
+                v-for="i, n in portfolioList" :key="n"
                 :isShow="true"
                 :PortfolioData="i"
                 />
@@ -21,7 +21,7 @@
 <script>
 import PortfolioItem from "./../PorstfolioPage/PortfolioItem.vue"
 
-import PortfolioDataList from "./../../assets/PortfolioList.js"
+import { mapState } from "vuex";
 
 let _PORTFOLIO_ITEM_WIDTH
 
@@ -39,7 +39,7 @@ let portfolioItemLefts = []
 export default {
     name : "Page5",
     data(){return{
-        PortfolioDataList,
+        // PortfolioDataList,
 
         isMouseOn : false
     }},
@@ -51,6 +51,9 @@ export default {
             this.$router.push('PR')
             window.scrollTo(0, 0)
         }
+    },
+    computed : {
+        ...mapState(["portfolioList"])
     },
     mounted(){
         document.querySelector(".portfolio-list").addEventListener("mouseover", ()=>{

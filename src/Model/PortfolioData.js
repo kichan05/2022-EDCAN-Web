@@ -1,5 +1,6 @@
 export class PortfolioData{
-    constructor(title = null, description = null, unit = null, img = null){
+    constructor(title, description, unit, img){
+        // if(!(title && description && unit && img)) return
         this.title = title
         this.description = description
         this.unit = unit

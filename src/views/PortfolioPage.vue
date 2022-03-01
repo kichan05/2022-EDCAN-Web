@@ -17,7 +17,7 @@
         <UnitDescription :choiceUnit="choiceUnit"/>
         <div class="portfolio-list">
             <PortfolioItem
-                v-for="i, n in PortfolioDataList"
+                v-for="i, n in portfolioList"
                 :PortfolioData="i" :key="n"
                 :isShow="getIsShow(i.unit)"/>
         </div>
@@ -31,17 +31,15 @@ import PortfolioItem from "../components/PorstfolioPage/PortfolioItem.vue"
 import UnitDescription from "../components/PorstfolioPage/UnitDescription.vue"
 import AnimationButton from "./../components/AnimationButton.vue"
 
-import PortfolioDataList from "./../assets/PortfolioList.js"
-
 import ButtonData from "./../Model/ButtonData.js"
 
 import Header from "../components/Header.vue";
 import Footer from "./../components/Footer.vue"
+import { mapState } from 'vuex'
 
 export default {
     name : "PortfolioPage",
     data(){return{
-        PortfolioDataList,
         choiceUnit : 0,
 
         allButtonData : new ButtonData(
@@ -70,6 +68,9 @@ export default {
 
             return false
         }
+    },
+    computed : {
+        ...mapState(["portfolioList"])
     },
     components : {
         PortfolioItem,
