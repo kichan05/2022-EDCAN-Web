@@ -28,7 +28,7 @@ header {
 
     position: fixed;
     top : 0px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .logo-wrap {

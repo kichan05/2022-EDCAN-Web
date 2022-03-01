@@ -1,5 +1,10 @@
 <template>
 <div class="main-page-page page1">
+    <div
+        v-for="n in BG_IMG_COUNT" :key="n"
+        :style="{backgroundImage : `url('/img/main_page_bg/bg_${n}.jpg')`}"
+        :class="{isShow : n == currentBgIndex}"
+        class="bg-img"></div>
     <div class="content">
         <h1>We are Creators.</h1>
         <h6>EDCAN</h6>
@@ -9,7 +14,18 @@
 
 <script>
 export default {
-    naem : "Page1"
+    naem : "Page1",
+    data(){return{
+        BG_IMG_COUNT : 9,
+        currentBgIndex : 1,
+    }},
+    mounted(){
+        setInterval(()=>{
+            this.currentBgIndex++
+            // this.currentBgIndex %= this.BG_IMG_COUNT
+            if(this.currentBgIndex == this.BG_IMG_COUNT + 1) this.currentBgIndex = 1
+        }, 10*1000)
+    }
 }
 </script>
 
@@ -17,10 +33,37 @@ export default {
 .page1 {
     height : 100vh;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('/img/main_page_bg/bg_01.jpg');
+    background-color: rgba(0, 0, 0, 0.55);
+
+    position: relative;
+}
+
+.bg-wrap {
+    width : 100%;
+    height : 100%;
+
+    position: absolute;
+    z-index: -1;
+}
+
+.bg-img {
+    width : 100%;
+    height : 100%;
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    position: absolute;
+    z-index: -1;
+
+    opacity: 0;
+
+    transition: 500ms;
+}
+
+.bg-img.isShow {
+    opacity: 1;
 }
 
 .content {
