@@ -1,5 +1,6 @@
 <template>
 <div class="admin-item portfolio-list">
+    <button @click="$store.dispatch('getAllPortfolio')">새로 고침</button>
     <div class="portfolio-list-wrap">
         <div
             v-for="(i, n) in portfolioList" :key="n"

@@ -45,7 +45,7 @@ export default {
 .portfolio-img {
     background-image: url('http://nextnews.kr/news/data/20200422/p1065599327402469_895_thum.PNG');
     background-color: #f5f5f5;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 

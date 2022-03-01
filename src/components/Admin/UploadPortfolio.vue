@@ -3,7 +3,7 @@
     <Loading  v-if="isLoading" />
     <div class="input-wrap">
         <label>제목 : <input type="text" v-model="inputTitle"></label>
-        <label>설명 : <input type="text" v-model="inputDescription"></label>
+        <label>설명 : <textarea v-model="inputDescription" cols="30" rows="10"></textarea> </label>
         <div class="choice-unit-wrap">
             유닛 선택 : 
             <label><input type="radio" v-model="checkedUnit" value="Atelier" name="choiceUnit" checked> Atelier </label>
@@ -13,7 +13,7 @@
         <label>이미지 : <input type="file" @change="seleteImg"></label>
 
     </div>
-    <img :src="choiceImgUrl" alt="">
+    <img :src="choiceImgUrl" class="ex-img">
     <button @click="upload">업로드</button>
 </div>
 </template>
@@ -75,6 +75,8 @@ export default {
                         this.checkedUnit = ""
                         this.choiceImg = ""
                         this.choiceImgUrl = ""
+
+                        this.$store.dispatch("getAllPortfolio")
                     })
                 })
             })
@@ -91,5 +93,9 @@ export default {
 .input-wrap {
     display: flex;
     flex-direction: column;
+}
+
+.ex-img {
+    width : 50%;
 }
 </style>

@@ -10,6 +10,9 @@ const store = createStore({
         isAdmin : false,
     }},
     mutations : {
+        clearPortfolioList(state){
+            state.portfolioList = []
+        },
         appendPortfolio(state, portfolioData){
             state.portfolioList.push(portfolioData)
         },
@@ -19,7 +22,8 @@ const store = createStore({
     },
     actions : {
         async getAllPortfolio(context){
-            context
+            context.commit("clearPortfolioList")
+            
             const portfolioSnapshot = await getDocs(collection(db, "portfolio"));
             portfolioSnapshot.forEach(doc => {
                 const data = doc.data()
@@ -28,7 +32,7 @@ const store = createStore({
                 // console.log(portfolioDoc);
                 context.commit("appendPortfolio", portfolioDoc)
             });
-        }
+        },
     }
 })
 
