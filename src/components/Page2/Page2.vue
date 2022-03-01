@@ -44,19 +44,19 @@
             <div class="comment">
                 우리는 모바일 앱이나, 웹 페이지를 만들지만,
                 <br>
-                개발자나, 디자이너와 같은 무언가로 정의되지 않습니다.
+                개발자나, 디자이너와 같은 <span class="bold">무언가로 정의</span>되지 않습니다.
             </div>
 
             <div class="comment">
                 우리는 모두가 같은 것들을 만들어 낼 때,
                 <br>
-                우리만의 것을 만드는 사람들입니다.
+                <span class="bold">우리만의 것을 만드는</span> 사람들입니다.
             </div>
 
             <div class="comment">
-                우리는 창작자입니다.
+                우리는 <span class="bold">창작자</span>입니다.
                 <br>
-                우리는 EDCAN입니다.
+                우리는 <span class="bold">EDCAN</span>입니다.
             </div>
         </div>
     </div>
@@ -129,7 +129,46 @@ h2 {
 }
 
 .comment {
+    font-weight: 400;
+    line-height: 1.7em;
+}
 
+.bold {
+    font-weight: 800;
+}
+
+.unser-line {
+    position: relative;
+}
+
+.unser-line::before {
+    content: "";
+
+    width : 105%;
+
+    border-bottom : 2px solid white;
+    border-radius: 20px;
+
+    position: absolute;
+    bottom : 0px;
+    left : 0px;
+
+    transform: translateX(-2.5%) rotateY(90deg);
+    
+    animation-name: underline-ani;
+    animation-duration: 1000ms;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes underline-ani {
+    0%{
+        transform: translateX(-2.5%) rotateY(90deg);
+    }
+
+    100%{
+        transform: translateX(-2.5%) rotateY(0deg);
+    }
 }
 
 @media (max-width : 900px) {

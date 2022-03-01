@@ -6,11 +6,15 @@ import { PortfolioData } from "./Model/PortfolioData.js"
 
 const store = createStore({
     state(){return {
-        portfolioList : []
+        portfolioList : [],
+        isAdmin : false,
     }},
     mutations : {
         appendPortfolio(state, portfolioData){
             state.portfolioList.push(portfolioData)
+        },
+        adminLogin(state, inputPassword){
+            state.isAdmin = inputPassword == "edcan123@"
         }
     },
     actions : {
