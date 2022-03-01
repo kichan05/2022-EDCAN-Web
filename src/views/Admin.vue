@@ -1,16 +1,19 @@
 <template>
 <div class="page admin">
     <UploadPortfolio/>
+    <PortfolioList/>
 </div>
 </template>
 
 <script>
 import UploadPortfolio from "./../components/Admin/UploadPortfolio.vue"
+import PortfolioList from "./../components/Admin/PortfolioList.vue"
 
 export default {
     name : "Admin",
     components : {
-        UploadPortfolio
+        UploadPortfolio,
+        PortfolioList,
     }
 }
 </script>

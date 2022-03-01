@@ -68,8 +68,6 @@ export default {
                         unit : this.checkedUnit,
                         img : url
                     }).then(()=>{
-                        console.log(`포트폴리오 ${this.inputTitle}업로드 완료`);
-                        alert(`포트폴리오 ${this.inputTitle}업로드 완료`);
                         this.isLoading = false;
 
                         this.inputTitle = ""

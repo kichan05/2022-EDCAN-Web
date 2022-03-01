@@ -17,7 +17,7 @@
         <UnitDescription :choiceUnit="choiceUnit"/>
         <div class="portfolio-list">
             <PortfolioItem
-                v-for="i, n in portfolioList"
+                v-for="i, n in PortfolioDataList"
                 :PortfolioData="i" :key="n"
                 :isShow="getIsShow(i.unit)"/>
         </div>
