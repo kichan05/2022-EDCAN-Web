@@ -24,6 +24,8 @@ export default {
 
     text-align: center;
     overflow: hidden;
+
+    word-break: break-all;
 }
 
 img {

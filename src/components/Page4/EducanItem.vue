@@ -54,7 +54,7 @@ export default {
 
 .educan-item-title {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .educan-item-tag-wrap {

@@ -1,10 +1,7 @@
 <template>
 <div class="step-item step1">
     <h4>Step {{ stepData.step }} : {{ stepData.title }}</h4>
-    <div class="descriptions-wrap"
-        v-for="(i, n) in stepData.descriptions" :key="n">
-        {{ i }}
-    </div>
+    <p>{{ stepData.descriptions }}</p>
 </div>
 </template>
 
@@ -28,12 +25,13 @@ export default {
 
 .step-item h4 {
     font-family: "Spoqa Han Sans Neo";
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .step-item .descriptions-wrap {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 @media (max-width : 900px) {

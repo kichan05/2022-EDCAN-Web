@@ -1,14 +1,19 @@
 <template>
 <div class="main-page-page page5">
 <div class="content">
+    <!-- <div v-for="(i, n) in portfolioList" :key="n">{{ i }}</div> -->
     <h3>Portfolio</h3>
     <div class="portfolio-list-wrap">
         <div class="portfolio-list">
             <PortfolioItem
-                v-for="i, n in portfolioList" :key="n"
+                v-for="i, n in portfolioList"
+                :PortfolioData="i" :key="n"
+                :isShow="true"/>
+            <!-- <PortfolioItem
+                v-for="i, n in PortfolioDataList" :key="n"
                 :isShow="true"
                 :PortfolioData="i"
-                />
+                /> -->
         </div>
     </div>
     <button
@@ -20,6 +25,8 @@
 
 <script>
 import PortfolioItem from "./../PorstfolioPage/PortfolioItem.vue"
+
+import PortfolioDataList from "./../../assets/PortfolioList"
 
 import { mapState } from "vuex";
 
@@ -39,7 +46,7 @@ let portfolioItemLefts = []
 export default {
     name : "Page5",
     data(){return{
-        // PortfolioDataList,
+        PortfolioDataList,
 
         isMouseOn : false
     }},
@@ -79,7 +86,7 @@ export default {
                 portfolioItemLefts[n]--
                 element.style.left = portfolioItemLefts[n] + "px"
 
-                if(portfolioItemLefts[n] < -700){
+                if(portfolioItemLefts[n] < -400){
                     portfolioItemLefts[n] = portfolioItemLefts[(n + -1 + portfolioItemLefts.length) % portfolioItemLefts.length] + PORTFOLIO_ITEM_WIDTH + PORTFOLIO_ITEM_MARGIN
                 }
             })

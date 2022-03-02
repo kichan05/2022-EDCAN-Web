@@ -61,7 +61,7 @@ const educanData = [
             new EducanStudyTag("웹디자인", "#8d80e7" ),
             new EducanStudyTag("Web", "#b97dbe" ),
         ],
-        "앱 동아리가 아닌 모바일 콘텐츠 개발반EDCAN은 웹 디자인 수업도 합니다.",
+        "웹 디자인 수업",
     ),
 ]
 
@@ -92,6 +92,9 @@ export default {
 }
 
 .content {
+    padding-top: 180px;
+    padding-bottom: 180px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,9 +134,9 @@ export default {
 
     color : white;
 
-    background: var(--EDCAN1);
-    border: 2px solid var(--EDCAN1);
-    border-radius: 30px;
+    background: #74cbfa;
+    border: 0px;
+    border-radius: 6px;
 
     transition: transform 50ms;
 }

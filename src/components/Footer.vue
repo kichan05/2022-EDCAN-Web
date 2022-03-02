@@ -1,9 +1,9 @@
 <template>
 <footer>
     <div class="content">
-        <img src="/img/EDCAN_LOGO.svg" alt="EDCAN로고" class="logo logo-rotate-animation" @click="$router.push('easterEgg')">
+        <img src="/img/EDCAN_LOGO.svg" alt="EDCAN로고" class="logo">
         <div class="description">
-            <div class="description-content">서울 용산구 원효로97길 33-4, 선린인터넷고등학교</div>
+            <div class="description-content"><span @click="$router.push('easterEgg')">서</span>울 용산구 원효로97길 33-4, 선린인터넷고등학교</div>
             <div class="description-content">Copyright ©EDCAN. All rights reserved.</div>
         </div>
     </div>

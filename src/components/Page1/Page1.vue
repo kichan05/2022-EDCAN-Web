@@ -1,10 +1,11 @@
 <template>
 <div class="main-page-page page1">
-    <div
+    <div class="bg"></div>
+    <BgImg
         v-for="n in BG_IMG_COUNT" :key="n"
-        :style="{backgroundImage : `url('/img/main_page_bg/bg_${n}.jpg')`}"
-        :class="{isShow : n == currentBgIndex}"
-        class="bg-img"></div>
+        :n="n"
+        :isShow="currentBgIndex == n"/>
+
     <div class="content">
         <h1>We are Creators.</h1>
         <h6>EDCAN</h6>
@@ -13,18 +14,23 @@
 </template>
 
 <script>
+import BgImg from "./BgImg.vue"
+
 export default {
     naem : "Page1",
     data(){return{
         BG_IMG_COUNT : 9,
         currentBgIndex : 1,
     }},
+    components : {
+        BgImg
+    },
     mounted(){
         setInterval(()=>{
             this.currentBgIndex++
             // this.currentBgIndex %= this.BG_IMG_COUNT
             if(this.currentBgIndex == this.BG_IMG_COUNT + 1) this.currentBgIndex = 1
-        }, 10*1000)
+        }, 5*1000)
     }
 }
 </script>
@@ -38,28 +44,16 @@ export default {
     position: relative;
 }
 
+.bg {
+    background-color: var(--gray4);
+}
+
 .bg-wrap {
     width : 100%;
     height : 100%;
 
     position: absolute;
     z-index: -1;
-}
-
-.bg-img {
-    width : 100%;
-    height : 100%;
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    position: absolute;
-    z-index: -1;
-
-    opacity: 0;
-
-    transition: 500ms;
 }
 
 .bg-img.isShow {
@@ -82,7 +76,7 @@ export default {
 
 .content h1{
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 0.025em;
 }
 
