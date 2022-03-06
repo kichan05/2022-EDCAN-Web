@@ -18,7 +18,7 @@
         </div>
     </div>
     <button
-        class="goto-PR"
+        class="goto-PR nomal-button"
         @click="gotoPR">전체 보기</button>
 </div>
 </div>
@@ -156,23 +156,6 @@ h3 {
 .goto-PR {
     width: 150px;
     height: 60px;
-
-    font-size: 25px;
-
-    background: #FFFFFF;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    border-radius: 30px;
-}
-
-.goto-PR:hover {
-    color : white;
-    background-color: black;
-}
-
-.goto-PR:active {
-    opacity: 0.5;
-    transform: scale(0.95);
 }
 
 </style>

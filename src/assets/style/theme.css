@@ -56,3 +56,24 @@ button {
         transform: rotateY(1turn);
     }
 }
+
+.nomal-button {
+    font-size: 25px;
+
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 30px;
+
+    transition: 250ms;
+}
+
+.nomal-button:hover {
+    color : white;
+    background-color: black;
+}
+
+.nomal-button:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
