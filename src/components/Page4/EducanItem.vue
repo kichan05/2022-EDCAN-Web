@@ -59,6 +59,7 @@ export default {
 
 .educan-item-tag-wrap {
     display: flex;
+    flex-wrap: wrap;
     gap : 8px;
 }
 

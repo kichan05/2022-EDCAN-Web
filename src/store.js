@@ -11,6 +11,7 @@ const store = createStore({
     }},
     mutations : {
         clearPortfolioList(state){
+            // alert("리셋")
             state.portfolioList = []
         },
         appendPortfolio(state, portfolioData){
@@ -22,16 +23,20 @@ const store = createStore({
     },
     actions : {
         async getAllPortfolio(context){
+            // alert("가져오기 실행")
             context.commit("clearPortfolioList")
             
             const portfolioSnapshot = await getDocs(collection(db, "portfolio"));
+            // alert("가져옴")
             portfolioSnapshot.forEach(doc => {
+                // alert("넣음")
                 const data = doc.data()
                 let portfolioDoc = new PortfolioData()
                 portfolioDoc.fromFirestore(data)
                 // console.log(portfolioDoc);
                 context.commit("appendPortfolio", portfolioDoc)
             });
+            // alert("끝남")
         },
     }
 })

@@ -88,7 +88,7 @@ export default {
             this.atelierButtonData.isSelete = it == 1
             this.pixelButtonData.isSelete = it == 2
         }
-    }
+    },
 }
 </script>
 

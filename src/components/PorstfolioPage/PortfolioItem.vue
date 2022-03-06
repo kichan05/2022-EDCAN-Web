@@ -18,7 +18,10 @@ export default {
     props : {
         isShow : Boolean,
         PortfolioData : Object,
-    }
+    },
+    // created(){
+    //     alert("아이템 생성" + this.PortfolioData.title)
+    // }
 }
 </script>
 

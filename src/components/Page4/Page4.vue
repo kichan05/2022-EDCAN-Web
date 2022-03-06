@@ -33,16 +33,17 @@ const educanData = [
             new EducanStudyTag("Kotlin", "#6F3C0B"),
             new EducanStudyTag("Jetpack", "#073042"),
         ],
-        "Andorid의 극 기초, 앱을 만들수 있는 정도까지 수업합니다. XML ~ RecyclerView",
+        "모바일 콘텐츠 개발의 가장 핵심이 되는 Andorid 앱 개발을 공부합니다.",
     ),
     new EducanStudyData(
-        "Kotlin을 케이크처럼 쉽게 먹는 법",
+        "Vue.js를 케이크 처럼 먹는 방법",
         "Atelier",
         [
-            new EducanStudyTag("Kotlin", "#6F3C0B" ),
-            new EducanStudyTag("기초", "#95df80" ),
+            new EducanStudyTag("CAN WOP", "#74cbfa" ),
+            new EducanStudyTag("Vue.js", "#95df80" ),
+            new EducanStudyTag("기초", "#df0d23" ),
         ],
-        "Android를 공부하려면 필수로 알아야하는 언어 (사실 필수아님ㅋㅋ 자바로 가능)",
+        "모바일 콘텐츠 개발의 두번째, 웹 분야를 공부하기위햇 Vue.js 프레임워크를 공부합니다.",
     ),
     new EducanStudyData(
         "UI/UX 기초 강좌",
@@ -52,16 +53,17 @@ const educanData = [
             new EducanStudyTag("기초이론", "#ffbc3f" ),
             new EducanStudyTag("디자인", "#27cf21" ),
         ],
-        "UI/UX 기초 수업",
+        "모바일 UI/UX 디자인에 대한 이론을 Figma와 Adobe XD를 이용하여 실습해보며 학습합니다.",
     ),
     new EducanStudyData(
-        "웹 디자인",
+        "서비스 클론 디자인 과정",
         "Pixel",
         [
+            new EducanStudyTag("UI/UX", "#fe654a" ),
             new EducanStudyTag("웹디자인", "#8d80e7" ),
-            new EducanStudyTag("Web", "#b97dbe" ),
+            new EducanStudyTag("클론 디자인", "#5fba88" ),
         ],
-        "웹 디자인 수업",
+        "멜론, 토스, 유튜브와 같은 실제 서비스를 클론 디자인해보며 UI/UX에 대한 기본적인 개념을 수립합니다.",
     ),
 ]
 

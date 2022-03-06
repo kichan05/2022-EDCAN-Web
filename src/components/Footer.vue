@@ -1,7 +1,7 @@
 <template>
 <footer>
     <div class="content">
-        <img src="/img/EDCAN_LOGO.svg" alt="EDCAN로고" class="logo">
+        <img src="/img/EDCAN_LOGO.svg" alt="EDCAN로고" class="logo logo-rotate-animation">
         <div class="description">
             <div class="description-content"><span @click="$router.push('easterEgg')">서</span>울 용산구 원효로97길 33-4, 선린인터넷고등학교</div>
             <div class="description-content">Copyright ©EDCAN. All rights reserved.</div>
@@ -36,10 +36,10 @@ footer .content {
 
     transition: 1500ms;
 }
-
+/* 
 .logo:hover {
     transform: rotateY(1turn) scale(0.9);
-}
+} */
 
 @keyframes ani {
     0% {

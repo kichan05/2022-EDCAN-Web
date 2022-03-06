@@ -1,12 +1,13 @@
 <template>
 <div class="main-page-page page5">
 <div class="content">
+    <!-- {{ $store.state.portfolioList }} -->
     <!-- <div v-for="(i, n) in portfolioList" :key="n">{{ i }}</div> -->
     <h3>Portfolio</h3>
     <div class="portfolio-list-wrap">
         <div class="portfolio-list">
             <PortfolioItem
-                v-for="i, n in portfolioList"
+                v-for="i, n in $store.state.portfolioList"
                 :PortfolioData="i" :key="n"
                 :isShow="true"/>
             <!-- <PortfolioItem
@@ -62,6 +63,9 @@ export default {
     computed : {
         ...mapState(["portfolioList"])
     },
+    // beforeMount(){
+    //     this.$store.dispatch("getAllPortfolio")
+    // },
     mounted(){
         document.querySelector(".portfolio-list").addEventListener("mouseover", ()=>{
             this.isMouseOn = true
@@ -72,6 +76,29 @@ export default {
 
         let portfolioItems = document.querySelectorAll(".portfolio-item")
         
+        portfolioItems.forEach((element, n)=>{
+            element.style.width = PORTFOLIO_ITEM_WIDTH + "px"
+            portfolioItemLefts.push(PORTFOLIO_ITEM_MARGIN * (n + 1) + PORTFOLIO_ITEM_WIDTH * n)
+
+            element.style.left =  portfolioItemLefts[n] + "px"
+        })
+
+        setInterval(()=>{
+            portfolioItems.forEach((element, n)=>{
+                if(this.isMouseOn) return
+
+                portfolioItemLefts[n]--
+                element.style.left = portfolioItemLefts[n] + "px"
+
+                if(portfolioItemLefts[n] < -400){
+                    portfolioItemLefts[n] = portfolioItemLefts[(n + -1 + portfolioItemLefts.length) % portfolioItemLefts.length] + PORTFOLIO_ITEM_WIDTH + PORTFOLIO_ITEM_MARGIN
+                }
+            })
+        }, 15)
+    },
+    updated(){
+        let portfolioItems = document.querySelectorAll(".portfolio-item")
+
         portfolioItems.forEach((element, n)=>{
             element.style.width = PORTFOLIO_ITEM_WIDTH + "px"
             portfolioItemLefts.push(PORTFOLIO_ITEM_MARGIN * (n + 1) + PORTFOLIO_ITEM_WIDTH * n)
