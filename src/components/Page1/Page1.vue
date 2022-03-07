@@ -7,8 +7,8 @@
         :isShow="currentBgIndex == n"/>
 
     <div class="content">
-        <h1>We are Creators.</h1>
-        <h6>EDCAN</h6>
+        <h1>{{ titleMsg }}</h1>
+        <h6>{{ subtitleMsg }}</h6>
     </div>
 
     <div class="more-wrap" @click="moreClick">
@@ -21,11 +21,19 @@
 <script>
 import BgImg from "./BgImg.vue"
 
+const _titleMsg = "We are Creators."
+const _subtitleMsg = "EDCAN"
+
+let titleMsgLen = -5
+let subTitleMsgLen = 1
+
 export default {
     naem : "Page1",
     data(){return{
         BG_IMG_COUNT : 9,
         currentBgIndex : 1,
+        titleMsg : "",
+        subtitleMsg : "",
     }},
     components : {
         BgImg
@@ -49,6 +57,17 @@ export default {
             // this.currentBgIndex %= this.BG_IMG_COUNT
             if(this.currentBgIndex == this.BG_IMG_COUNT + 1) this.currentBgIndex = 1
         }, 5*1000)
+
+        setInterval(()=>{
+            if(titleMsgLen > 0)
+                this.titleMsg = _titleMsg.slice(0, titleMsgLen++)
+            else
+                titleMsgLen++
+            
+            if(_titleMsg.length + 5 <= titleMsgLen){
+                this.subtitleMsg = _subtitleMsg.slice(0, subTitleMsgLen++)
+            }
+        }, 100)
     }
 }
 </script>
