@@ -10,6 +10,11 @@
         <h1>We are Creators.</h1>
         <h6>EDCAN</h6>
     </div>
+
+    <div class="more-wrap" @click="moreClick">
+        <span class="more">더 알아보기</span>
+        <img src="/img/arrow.svg" alt="" class="arrow">
+    </div>
 </div>
 </template>
 
@@ -24,6 +29,19 @@ export default {
     }},
     components : {
         BgImg
+    },
+    methods: {
+        moreClick(){
+            const windowHeight = window.innerHeight;
+
+            window.scroll({
+                behavior : "smooth",
+                left : 0,
+                top : windowHeight
+            })
+
+            // window.scrollBy(0, windowHeight)
+        }
     },
     mounted(){
         setInterval(()=>{
@@ -85,4 +103,43 @@ export default {
     font-weight: 200;
     letter-spacing: 0em;
 }
+
+.more-wrap {
+    color : white;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 20px;
+
+    position: absolute;
+    bottom : 70px;
+    left : 50%;
+    z-index: 3;
+
+    transform: translateX(-50%);
+
+    cursor: pointer;
+}
+
+.arrow {
+    width : 10%;
+
+    animation-name : more-arrow-animation;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes more-arrow-animation {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+
 </style>

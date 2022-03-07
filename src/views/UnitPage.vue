@@ -61,7 +61,7 @@ export default {
             ),
             new CurriculumData(
                 "웹 백엔드 교육 과정",
-                "추가 예정",
+                "V8기반의 JavaScript 런타임인 Node.js를 사용한 백엔드를 공부합니다.",
             ),
         ],
 
@@ -121,5 +121,11 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap : 32px;
+}
+
+@media (max-width : 900px) {
+    .curriculum-list {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

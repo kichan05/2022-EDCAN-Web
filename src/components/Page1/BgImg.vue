@@ -53,7 +53,7 @@ export default {
 }
 
 .bg-img-des-leave-to {
-    opacity: 0;
+    opacity: 0.5;
 }
 
 </style>

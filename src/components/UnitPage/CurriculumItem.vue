@@ -26,32 +26,44 @@ export default {
     
     display: flex;
     flex-direction: column;
-    gap : 20px;
+    gap : 12px;
+
+    transition: 250ms;
 }
 
 .curriculum-item.px {
     background: #F39592;
+    color: #412727;
 }
 
 .curriculum-item.at {
     background: #829CE0;
+    color : #1b1c3c;
 }
 
+.curriculum-item.px:hover {
+    background: #f5807c;
+    transform: scale(1.015);
+    /* box-shadow: 6px 6px 0px #f5807c; */
+}
+
+.curriculum-item.at:hover {
+    background: #5e81d8;
+    transform: scale(1.015);
+    /* box-shadow: 3px 3px 3px #5e81d8; */
+}
+
+
 h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 
     color: #FFFFFF;
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 25px;
-    color: #713636;
-}
-
-.curriculum-item.at p {
-    color : #363871;
 }
 
 </style>
