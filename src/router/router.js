@@ -4,6 +4,7 @@ import MainPage from "./../views/MainPage.vue"
 import PortfolioPage from "./../views/PortfolioPage.vue"
 import Admim from "./../views/Admin.vue"
 import AdmimLogin from "./../views/AdminLogin.vue"
+import UnitPage from "./../views/UnitPage.vue"
 import EasterEggPage from "./../views/EasterEggPage.vue"
 
 import store from "./../store.js"
@@ -16,6 +17,10 @@ const routes = [
     {
         path : "/PR",
         component : PortfolioPage
+    },
+    {
+        path : "/unit",
+        component : UnitPage
     },
     {
         path : "/easterEgg",

@@ -3,6 +3,7 @@
     <Page1/>
     <Page2/>
     <Page3/>
+    <UnitPage/>
     <Page4/>
     <Page5/>
     <Page6/>
@@ -19,6 +20,8 @@ import Page4 from "../components/Page4/Page4.vue";
 import Page5 from "../components/Page5/Page5.vue";
 import Page6 from "../components/Page6/Page6.vue";
 
+import UnitPage from "./UnitPage.vue"
+
 import Footer from "../components/Footer.vue";
 
 export default {
@@ -30,6 +33,8 @@ export default {
         Page4,
         Page5,
         Page6,
+
+        UnitPage,
 
         Footer,
     }
