@@ -9,7 +9,7 @@
                 소프트웨어과 1, 2학년, 콘텐츠디자인과 1, 2학년이 지원할 수 있습니다.
             </p>
         </div>
-        <button class="goto-form nomal-button">지금 바로 지원하기</button>
+        <button class="goto-form nomal-button" @click="gotoJiwon">지금 바로 지원하기</button>
     </div>
 </div>
 </template>
@@ -17,6 +17,11 @@
 <script>
 export default {
     name : "Page6",
+    methods: {
+        gotoJiwon(){
+            window.open("https://www.youtube.com")
+        }
+    },
 }
 </script>
 

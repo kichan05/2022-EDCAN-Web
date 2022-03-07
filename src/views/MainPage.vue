@@ -1,5 +1,7 @@
 <template>
 <main class="page">
+    <button class="goto-jiwon" @click="gotoJiwon">지원 하기</button>
+
     <Page1/>
     <Page2/>
     <Page3/>
@@ -7,6 +9,7 @@
     <Page4/>
     <Page5/>
     <Page6/>
+
 
     <Footer/>
 </main>
@@ -37,7 +40,25 @@ export default {
         UnitPage,
 
         Footer,
-    }
+    },
+    methods: {
+        gotoJiwon(){
+        window.open("https://www.youtube.com")
+        }
+    },
+    mounted() {
+        window.addEventListener("scroll", ()=>{
+            const page6 = document.querySelector(".page6")
+            if(page6.getBoundingClientRect().top < 500){
+                document.querySelector(".goto-jiwon")
+                .classList.add("hidden")
+            }
+            else{
+                document.querySelector(".goto-jiwon")
+                .classList.remove("hidden")
+            }
+        })
+    },
 }
 </script>
 
@@ -55,5 +76,38 @@ export default {
 .main-page-page .page-title {
     font-size: 32px;
     font-weight: 500;
+}
+
+.goto-jiwon {
+    font-size: 24px;
+    font-weight: 500;
+
+    background-color: #fff;
+
+    padding : 12px 40px;
+
+    border : 0px;
+    border-radius: 30px;
+
+    box-shadow: 0px 0px 10px #a2a2a269;
+
+    position: fixed;
+    bottom : 20px;
+    right : 20px;
+    z-index: 10;
+
+    transition: 250ms;
+}
+
+.goto-jiwon:hover {
+    transform: scale(1.025);
+}
+
+.goto-jiwon:active {
+    transform: scale(0.985);
+}
+
+.goto-jiwon.hidden {
+    opacity: 0;
 }
 </style>
