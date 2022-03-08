@@ -11,10 +11,12 @@
         <h6>{{ subtitleMsg }}</h6>
     </div>
 
-    <div class="more-wrap" @click="moreClick">
-        <span class="more">더 알아보기</span>
-        <img src="/img/arrow.svg" alt="" class="arrow">
-    </div>
+    <transition name="more-msg-ani">
+        <div class="more-wrap" @click="moreClick" v-if="isMoreMsgShow">
+            <span class="more">더 알아보기</span>
+            <img src="/img/arrow.svg" alt="" class="arrow">
+        </div>
+    </transition>
 </div>
 </template>
 
@@ -34,6 +36,8 @@ export default {
         currentBgIndex : 1,
         titleMsg : "",
         subtitleMsg : "",
+
+        isMoreMsgShow : false,
     }},
     components : {
         BgImg
@@ -67,6 +71,19 @@ export default {
             if(_titleMsg.length + 5 <= titleMsgLen){
                 this.subtitleMsg = _subtitleMsg.slice(0, subTitleMsgLen++)
             }
+
+            if(_subtitleMsg.length + 5 <= subTitleMsgLen){
+                this.isMoreMsgShow = true
+            }
+
+            if(titleMsgLen >= this.titleMsg.length + 100){
+                titleMsgLen = -5
+                subTitleMsgLen = 1
+
+                this.titleMsg = ""
+                this.subtitleMsg = ""
+            }
+
         }, 100)
     }
 }
@@ -147,6 +164,7 @@ export default {
 
     animation-name : more-arrow-animation;
     animation-duration: 2000ms;
+    animation-delay: 550ms;
     animation-iteration-count: infinite;
 }
 
@@ -160,5 +178,17 @@ export default {
     }
 }
 
+
+.more-msg-ani-enter-from {
+    opacity: 0;
+}
+
+.more-msg-ani-enter-active {
+    transition: 1000ms;
+}
+
+.more-msg-ani-enter-to {
+    opacity: 1;
+}
 
 </style>

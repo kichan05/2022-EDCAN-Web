@@ -1,6 +1,6 @@
 <template>
 <main class="page">
-    <button class="goto-jiwon" @click="$gotoJiwon">지원하기</button>
+    <button class="goto-jiwon"><a href="#page6">지원하기</a></button>
 
     <Page1/>
     <Page2/>

@@ -1,5 +1,5 @@
 <template>
-<div class="main-page-page page6">
+<div class="main-page-page page6" id="page6">
     <div class="content">
         <div class="title">
             <h3>지금 바로 EDCAN에 지원하세요</h3>

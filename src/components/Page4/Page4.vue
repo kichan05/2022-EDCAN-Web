@@ -15,7 +15,7 @@
                 :educanStudyData="i"/>
         </div>
 
-        <button @click="gotoEducan" class="goto-educan"><span class="bold">EDUCAN</span> 바로가기</button>
+        <button @click="gotoEducan" class="goto-educan nomal-button"><span class="bold">EDUCAN</span> 바로가기</button>
     </div>
 </div>
 </template>
@@ -133,28 +133,20 @@ export default {
     font-size: 25px;
 
     padding: 12px 16px;
-
-    color : white;
-
-    background: #74cbfa;
-    border: 0px;
-    border-radius: 6px;
-
-    transition: transform 50ms;
 }
 
 .bold {
     font-weight: bold;
 }
 
-.goto-educan:hover {
+/* .goto-educan:hover {
     transform: scale(1.05);
 }
 
 .goto-educan:active {
     opacity: 0.5;
     transform: scale(0.95);
-}
+} */
 
 @media (max-width : 900px) {
     .educan-item-wrap {

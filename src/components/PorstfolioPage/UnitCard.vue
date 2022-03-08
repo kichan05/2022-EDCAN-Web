@@ -9,7 +9,7 @@
 
     <img class="logo card logo-ani-Y" src="/img/edcan_typo_verticality.svg" alt="ATELIER 로고"
         v-if="unitData.type == 'edcan'">
-    <img class="logo card logo-ani-Y-reverse" src="/img/Atelier_typo_verticality.svg" alt="ATELIER 로고"
+    <img class="logo card logo-ani-Y-reverse" src="/img/ATELIER_typo_verticality.svg" alt="ATELIER 로고"
         v-else-if="unitData.type == 'at'">
     <img class="logo card logo-ani-Y" src="/img/Pixel_typo_verticality.svg" alt="ATELIER 로고"
         v-else-if="unitData.type == 'px'">
