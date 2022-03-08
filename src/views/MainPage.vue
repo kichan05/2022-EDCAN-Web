@@ -1,6 +1,6 @@
 <template>
 <main class="page">
-    <button class="goto-jiwon" @click="gotoJiwon">지원 하기</button>
+    <button class="goto-jiwon" @click="$gotoJiwon">지원하기</button>
 
     <Page1/>
     <Page2/>
@@ -42,9 +42,9 @@ export default {
         Footer,
     },
     methods: {
-        gotoJiwon(){
-        window.open("https://www.youtube.com")
-        }
+        // gotoJiwon(){
+            
+        // }
     },
     mounted() {
         window.addEventListener("scroll", ()=>{
