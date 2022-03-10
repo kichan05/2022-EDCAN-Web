@@ -96,4 +96,12 @@ export default {
 .goto-jiwon-wrap button {
     
 }
+
+
+@media (max-width : 650px) {
+    .jiwon-form-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
 </style>

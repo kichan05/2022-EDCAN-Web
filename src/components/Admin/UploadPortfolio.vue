@@ -78,7 +78,13 @@ export default {
 
                         this.$store.dispatch("getAllPortfolio")
                     })
+                    .catch(()=>{
+                        alert("Firestore 업로드에 실패했습니다.")
+                    })
                 })
+            })
+            .catch(()=>{
+                alert("Storage 업로드에 실패했습니다.")
             })
         }
     }
