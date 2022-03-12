@@ -36,7 +36,7 @@ const educanData = [
         "모바일 콘텐츠 개발의 가장 핵심이 되는 Andorid 앱 개발을 공부합니다.",
     ),
     new EducanStudyData(
-        "Vue.js를 케이크 처럼 먹는 방법",
+        "누워서 Vue.js 먹기",
         "Atelier",
         [
             new EducanStudyTag("CAN WOP", "#74cbfa" ),
