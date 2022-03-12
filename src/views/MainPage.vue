@@ -110,4 +110,11 @@ export default {
 .goto-jiwon.hidden {
     opacity: 0;
 }
+
+@media (max-width : 1000px) {
+    .goto-jiwon {
+        font-size : 16px;
+        padding : 10px 20px;
+    }
+}
 </style>
