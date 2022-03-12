@@ -2,9 +2,12 @@
 <div class="main-page-page page3">
     <div class="content">
         <h3>Development Process</h3>
-        <div class="steps-wrap">
-            <StepItem
-                v-for="(i, n) in stepDataList" :key="n" :stepData="i"/>
+        <div class="progress-and-step">
+            <div class="progress"></div>
+            <div class="steps-wrap">
+                <StepItem
+                    v-for="(i, n) in stepDataList" :key="n" :stepData="i"/>
+            </div>
         </div>
     </div>
 </div>
@@ -51,9 +54,7 @@ export default {
 .page3 {
     min-height : min-content;
 
-    color : white;
-
-    background: linear-gradient(107.56deg, #400091 0%, #52142A 50%, #000000 100%);
+    /* background: linear-gradient(107.56deg, #400091 0%, #52142A 50%, #000000 100%); */
 }
 
 .content {
@@ -72,10 +73,26 @@ h3 {
     text-align: center;
 }
 
+.progress-and-step {
+    display: flex;
+    gap : 32px;
+}
+
+.progress {
+    width : 25px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(180deg, rgba(78,241,255,1) 0%, rgba(89,126,228,1) 33%, rgba(247,84,203,1) 66%, rgba(255,0,0,1) 100%);
+}
+
 .steps-wrap {
+    flex : 1;
+    padding : 16px 0;
+
     display: flex;
     flex-direction: column;
-    gap : 36px;
+    gap : 42px;
 }
 
 @media (max-width : 900px) {
