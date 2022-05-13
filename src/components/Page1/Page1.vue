@@ -1,10 +1,11 @@
 <template>
 <div class="main-page-page page1">
-    <div class="bg"></div>
-    <BgImg
-        v-for="n in BG_IMG_COUNT" :key="n"
-        :n="n"
-        :isShow="currentBgIndex == n"/>
+    <div class="bg">
+        <div
+            v-for="i in BG_IMG_COUNT" :key="i"
+            :class="{'activate' : i == currentBgIndex}"
+            :style="{backgroundImage: `url('/img/main_page_bg/bg_${i}.webp')`}"></div>
+    </div>
 
     <div class="content">
         <h1>{{ titleMsg }}</h1>
@@ -21,7 +22,7 @@
 </template>
 
 <script>
-import BgImg from "./BgImg.vue"
+// import BgImg from "./BgImg.vue"
 
 const _titleMsg = "We are Creators."
 const _subtitleMsg = "EDCAN"
@@ -32,7 +33,7 @@ let subTitleMsgLen = 1
 export default {
     naem : "Page1",
     data(){return{
-        BG_IMG_COUNT : 9,
+        BG_IMG_COUNT : 10,
         currentBgIndex : 1,
         titleMsg : "",
         subtitleMsg : "",
@@ -40,7 +41,7 @@ export default {
         isMoreMsgShow : false,
     }},
     components : {
-        BgImg
+        // BgImg
     },
     methods: {
         moreClick(){
@@ -98,8 +99,34 @@ export default {
     position: relative;
 }
 
+.bg, .bg > * {
+    width: 100%;
+    height: 100vh;
+}
+
 .bg {
-    background-color: var(--gray4);
+    background-color: rgba(0, 0, 0, 0.55);
+
+    position: absolute;
+
+    top : 0;
+    left : 0;
+    z-index: -1;
+}
+
+.bg div {
+    opacity: 0;
+
+    position: absolute;
+    top : 0;
+    left : 0;
+    background-position: center;
+
+    transition: opacity 1500ms;;
+}
+
+.bg div.activate {
+    opacity: 1;
 }
 
 .bg-wrap {
@@ -166,6 +193,16 @@ export default {
     animation-duration: 2000ms;
     animation-delay: 550ms;
     animation-iteration-count: infinite;
+}
+
+@keyframes bg-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes more-arrow-animation {
