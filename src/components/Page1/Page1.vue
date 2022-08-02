@@ -4,7 +4,7 @@
         <div
             v-for="i in BG_IMG_COUNT" :key="i"
             :class="{'activate' : i == currentBgIndex}"
-            :style="{backgroundImage: `url('/img/main_page_bg/bg_${i}.webp')`}"></div>
+            :style="{backgroundImage: `url('/img/main_page_bg/bg_${i - 1}.webp')`}"></div>
     </div>
 
     <div class="content">
@@ -33,7 +33,7 @@ let subTitleMsgLen = 1
 export default {
     naem : "Page1",
     data(){return{
-        BG_IMG_COUNT : 10,
+        BG_IMG_COUNT : 6,
         currentBgIndex : 1,
         titleMsg : "",
         subtitleMsg : "",
@@ -68,7 +68,7 @@ export default {
                 this.titleMsg = _titleMsg.slice(0, titleMsgLen++)
             else
                 titleMsgLen++
-            
+
             if(_titleMsg.length + 5 <= titleMsgLen){
                 this.subtitleMsg = _subtitleMsg.slice(0, subTitleMsgLen++)
             }
