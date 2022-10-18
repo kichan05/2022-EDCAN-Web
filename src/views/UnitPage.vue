@@ -23,7 +23,7 @@
             <p class="unit-comment">
                 Pixel은 콘텐츠디자인과가 지원 할 수 있는 디자인 유닛이며,  
                 뛰어난 창의력을 가진 디자이너를 양성합니다.
-                픽셀 부원은 다음 과정을 이수합니다
+                픽셀 부원은 다음 과정을 이수합니다.
             </p>
 
             <div class="curriculum-list">
@@ -61,7 +61,7 @@ export default {
             ),
             new CurriculumData(
                 "웹 백엔드 교육 과정",
-                "V8기반의 JavaScript 런타임인 Node.js를 사용한 백엔드를 공부합니다.",
+                "V8 기반의 JavaScript 런타임인 Node.js를 사용한 백엔드를 공부합니다.",
             ),
         ],
 
@@ -80,7 +80,7 @@ export default {
             ),
             new CurriculumData(
                 "2022 디자인 트렌드 학습 과정",
-                "2022 UI/UX 디자인 트렌드를 통해 UI/UX에 대한 눈을 키우고  학습합니다.",
+                "2022 UI/UX 디자인 트렌드를 통해 UI/UX에 대한 눈을 키우고 학습합니다.",
             ),
         ]
     }},

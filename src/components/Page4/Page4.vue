@@ -43,7 +43,7 @@ const educanData = [
             new EducanStudyTag("Vue.js", "#95df80" ),
             new EducanStudyTag("기초", "#df0d23" ),
         ],
-        "모바일 콘텐츠 개발의 두번째, 웹 분야를 공부하기위햇 Vue.js 프레임워크를 공부합니다.",
+        "모바일 콘텐츠 개발의 두번째, 웹 분야를 공부하기 위해서 Vue.js 프레임워크를 공부합니다.",
     ),
     new EducanStudyData(
         "UI/UX 기초 강좌",
