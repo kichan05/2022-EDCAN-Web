@@ -1,28 +1,37 @@
 <template>
-<div class="main-page-page page4">
+  <div class="main-page-page page4">
     <div class="content">
-        <div class="description-wrap">
-            <h3 class="page-title">Education</h3>
-            <p class="description">
-                이러한 과정들을 수행하기 위한 교육도 준비되어 있습니다.<br>
-                모든 교육과정은 학과에 관계없이 <span @click="gotoEducan" class="educan">EDUCAN</span>에서 이수할 수 있습니다.
-            </p>
-        </div>
+      <div class="description-wrap">
+        <h3 class="page-title">Education</h3>
+        <p class="description">
+          이러한 과정들을 수행하기 위한 교육도 준비되어 있습니다.<br />
+          모든 교육과정은 학과에 관계없이
+          <span @click="gotoEducan" class="educan">EDUCAN</span>에서 이수할 수
+          있습니다.
+        </p>
+      </div>
 
-        <div class="educan-item-wrap">
-            <EducanItem 
-                v-for="i, n in educanData" :key="n"
-                :educanStudyData="i"/>
-        </div>
+      <div class="educan-item-wrap">
+        <EducanItem
+          v-for="(i, n) in educanData"
+          :key="n"
+          :educanStudyData="i"
+        />
+      </div>
 
-        <button @click="gotoEducan" class="goto-educan nomal-button"><span class="bold">EDUCAN</span> 바로가기</button>
+      <button @click="gotoEducan" class="goto-educan nomal-button">
+        <span class="bold">EDUCAN</span> 바로가기
+      </button>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-import EducanItem from "./EducanItem.vue"
-import { EducanStudyData, EducanStudyTag } from "../../Model/EducanStudyData.js"
+import EducanItem from "./EducanItem.vue";
+import {
+  EducanStudyData,
+  EducanStudyTag,
+} from "../../Model/EducanStudyData.js";
 
 const educanData = [
     new EducanStudyData(
@@ -67,76 +76,77 @@ const educanData = [
     ),
 ]
 
-
 export default {
-    name : "Page4",
-    data(){ return{
-        educanData
-    }},
-    methods : {
-        gotoEducan(){
-            setTimeout(()=>{
-                    // location.href = "https://edu.edcan.kr"
-                    window.open("https://edu.edcan.kr")
-                }, 150)
-        }
+  name: "Page4",
+  data() {
+    return {
+      educanData,
+    };
+  },
+  methods: {
+    gotoEducan() {
+      setTimeout(() => {
+        // location.href = "https://edu.edcan.kr"
+        window.open("https://edu.edcan.kr");
+      }, 150);
     },
-    components : {
-        EducanItem
-    },
-}
+  },
+  components: {
+    EducanItem,
+  },
+};
 </script>
 
 <style scoped>
 .page4 {
-    display: grid;
-    grid-template-rows: 1fr;
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .content {
-    padding-top: 180px;
-    padding-bottom: 180px;
+  padding-top: 180px;
+  padding-bottom: 180px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap : 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
 }
 
 .description-wrap {
-    display: flex;
-    flex-direction: column;
-    gap : 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-    text-align: center;
+  text-align: center;
 }
 
 .description {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .educan-item-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap : 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .description .educan {
-    font-weight: bold;
-    text-decoration: underline 3px;
+  font-weight: bold;
+  text-decoration: underline 3px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .goto-educan {
-    font-size: 25px;
+  font-size: 25px;
 
-    padding: 12px 16px;
+  padding: 12px 16px;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* .goto-educan:hover {
@@ -148,9 +158,9 @@ export default {
     transform: scale(0.95);
 } */
 
-@media (max-width : 900px) {
-    .educan-item-wrap {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 900px) {
+  .educan-item-wrap {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
