@@ -35,8 +35,6 @@ footer .content {
 
 .logo {
     width : 250px;
-
-    transition: 1500ms;
 }
 
 /* 
@@ -60,7 +58,7 @@ footer .content {
 @media (max-width : 1000px) {
     footer .content {
         flex-direction: column;
-        gap : 16px;
+        gap : 24px;
     }
 }
 </style>
