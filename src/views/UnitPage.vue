@@ -5,7 +5,7 @@
             <img src="/img/ATELIER_typo_horizontal.svg" alt="" class="logo">
 
             <p class="unit-comment">
-                Atelier는 소프트웨어과가 지원할 수 있는 개발 유닛이며, 뛰어난 문제 해결력과 창의력을 지닌 개발자를 양성합니다.
+                Atelier는 소프트웨어과 학생이 지원할 수 있는 개발 유닛이며, 뛰어난 문제 해결력과 창의력을 지닌 개발자를 양성합니다.
                 Atelier에 속한 부원은 다음 교육과정을 이수합니다.
             </p>
 
@@ -21,9 +21,9 @@
             <img src="/img/Pixel_typo_horizeontal.svg" alt="" class="logo">
 
             <p class="unit-comment">
-                Pixel은 콘텐츠디자인과가 지원 할 수 있는 디자인 유닛이며,  
+                Pixel은 콘텐츠디자인과 학생이 지원할 수 있는 디자인 유닛이며,  
                 뛰어난 창의력을 가진 디자이너를 양성합니다.
-                픽셀 부원은 다음 과정을 이수합니다
+                픽셀 부원은 다음 과정을 이수합니다.
             </p>
 
             <div class="curriculum-list">
@@ -56,12 +56,12 @@ export default {
                 "Android Studio를 사용한 앱 개발의 필수적인 요소들을 공부합니다.",
             ),
             new CurriculumData(
-                "웹 프론트 엔드 교육과정",
+                "웹 프론트엔드 교육과정",
                 "2021년 가장 많이 사용된 웹 프레임워크인 Vue.js를 사용한 프론트 엔드를 공부합니다.",
             ),
             new CurriculumData(
                 "웹 백엔드 교육 과정",
-                "V8기반의 JavaScript 런타임인 Node.js를 사용한 백엔드를 공부합니다.",
+                "V8 기반의 JavaScript 런타임인 Node.js를 사용한 백엔드를 공부합니다.",
             ),
         ],
 
@@ -76,11 +76,11 @@ export default {
             ),
             new CurriculumData(
                 "Figma, XD 사용 교육 과정",
-                "Figma와 XD의 툴 사용 방법을 학습합니다. ",
+                "Figma와 XD의 툴 사용 방법을 학습합니다.",
             ),
             new CurriculumData(
                 "2022 디자인 트렌드 학습 과정",
-                "2022 UI/UX 디자인 트렌드를 통해 UI/UX에 대한 눈을 키우고  학습합니다.",
+                "2022 UI/UX 디자인 트렌드를 통해 UI/UX에 대한 눈을 키우고 학습합니다.",
             ),
         ]
     }},

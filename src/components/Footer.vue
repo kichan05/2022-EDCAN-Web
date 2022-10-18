@@ -28,14 +28,15 @@ footer .content {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .logo {
-    width : 30%;
-    min-width: 500px;
-
-    transition: 1500ms;
+    width : 250px;
 }
+
 /* 
 .logo:hover {
     transform: rotateY(1turn) scale(0.9);
@@ -55,15 +56,9 @@ footer .content {
 }
 
 @media (max-width : 1000px) {
-    .logo {
-        width : 100%;
-        min-width: unset;
-        max-width : 500px;
-    }
-
     footer .content {
         flex-direction: column;
-        gap : 16px;
+        gap : 24px;
     }
 }
 </style>
