@@ -1,24 +1,11 @@
-# 2022-edcan-web
+# 2022-EDCAN-Web
 
-## Project setup
-```
-npm install
-```
+## 개발자
+- 박희찬 (EDCAN 8기 부부장) [Github](https://www.github.com/kichan05)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 사용 기술
+- Vue.js
+- Firebase (Firestore, Storage)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 사용하기
+- [바로가기](https://2022.edcan.kr)
